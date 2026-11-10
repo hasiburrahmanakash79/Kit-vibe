@@ -1,0 +1,12 @@
+export const reviews = [
+  { id: "rv-001", productId: "kv-001", customer: "Jordan Pike", avatar: "JP", rating: 5, date: "2026-06-12", verified: true, status: "approved", text: "Fit is spot on and the fabric feels genuinely premium. Wore it to the derby and got so many compliments on the emerald tone.", jersey: "Meridian FC Home Jersey" },
+  { id: "rv-002", productId: "kv-001", customer: "Amara Diallo", avatar: "AD", rating: 4, date: "2026-05-30", verified: true, status: "approved", text: "Great shirt, runs slightly small so I'd size up. Colour is even richer in person.", jersey: "Meridian FC Home Jersey" },
+  { id: "rv-003", productId: "kv-003", customer: "Theo Marsh", avatar: "TM", rating: 5, date: "2026-06-20", verified: true, status: "approved", text: "Ordered this for the tournament and it did not disappoint. Breathable, light, and the crest detail is beautiful.", jersey: "Costa Verdana National Home Jersey" },
+  { id: "rv-004", productId: "kv-005", customer: "Priya Nair", avatar: "PN", rating: 5, date: "2026-04-18", verified: true, status: "approved", text: "The retro fit and lace collar make this feel like a real archive piece, not a cheap reprint.", jersey: "Lupo Milano '94 Retro Jersey" },
+  { id: "rv-005", productId: "kv-007", customer: "Marcus Boone", avatar: "MB", rating: 5, date: "2026-06-02", verified: false, status: "pending", text: "Player fit is noticeably tighter and more athletic than the replica. Worth the upgrade.", jersey: "Rio Estrella Player Issue Home" },
+  { id: "rv-006", productId: "kv-011", customer: "Sofia Reyes", avatar: "SR", rating: 5, date: "2026-05-14", verified: true, status: "approved", text: "My son loves it, holds up well after washing and the sizing chart was accurate.", jersey: "Meridian FC Kids Home Jersey" },
+  { id: "rv-007", productId: "kv-006", customer: "Owen Fitzgerald", avatar: "OF", rating: 4, date: "2026-03-22", verified: true, status: "approved", text: "Nostalgic in the best way. Fabric is heavier than modern kits which I actually prefer.", jersey: "Northbridge United '87 Retro Jersey" },
+  { id: "rv-008", productId: "kv-015", customer: "Lena Hoffman", avatar: "LH", rating: 3, date: "2026-06-05", verified: false, status: "pending", text: "Shirt itself is nice but shipping took longer than expected.", jersey: "Lupo Milano Home Jersey" },
+];
+
+export const getReviewsForProduct = (productId) => reviews.filter((r) => r.productId === productId && r.status === "approved");

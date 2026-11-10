@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #FAFAF8;
+  color: #0A0A0B;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: #17E06B; color: #0A0A0B; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d4d4d4; border-radius: 999px; }
+.dark-scroll::-webkit-scrollbar-thumb { background: #2a2a2d; }
+
+.font-display { font-family: 'Anton', 'Arial Narrow', sans-serif; letter-spacing: 0.01em; }
+.font-mono { font-family: 'Space Mono', monospace; }
+
+a { color: inherit; }
+
+:focus-visible {
+  outline: 2px solid #17E06B;
+  outline-offset: 2px;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #ececec 25%, #f6f6f6 37%, #ececec 63%);
+  background-size: 800px 100%;
+  animation: shimmer 1.8s infinite linear;
+}
+.skeleton-dark {
+  background: linear-gradient(90deg, #1a1a1c 25%, #232326 37%, #1a1a1c 63%);
+  background-size: 800px 100%;
+  animation: shimmer 1.8s infinite linear;
+}
+
+.jersey-num {
+  font-family: 'Anton', sans-serif;
+  line-height: 0.8;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.253);
+}
+.jersey-num-dark {
+  font-family: 'Anton', sans-serif;
+  line-height: 0.8;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(10, 10, 11, 0.164);
+}
+
+.clip-tag {
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 92% 100%, 0 100%);
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

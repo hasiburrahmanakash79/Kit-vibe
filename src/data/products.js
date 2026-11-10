@@ -1,0 +1,186 @@
+// Mock product catalog. Teams and leagues are fictional brands created for this demo.
+const img = (bg, fg, label) =>
+  `https://placehold.co/900x1100/${bg}/${fg}?font=raleway&text=${encodeURIComponent(label)}`;
+
+const gallery = (team, bg, fg) => [
+  img(bg, fg, `${team}\nHOME`),
+  img("0A0A0B", fg, `${team}\nBACK`),
+  img(bg, "0A0A0B", `${team}\nDETAIL`),
+  img("1D1D20", fg, `${team}\nON PITCH`),
+];
+
+const sizes = () => ([
+  { size: "XS", stock: 6 },
+  { size: "S", stock: 14 },
+  { size: "M", stock: 22 },
+  { size: "L", stock: 18 },
+  { size: "XL", stock: 9 },
+  { size: "XXL", stock: 0 },
+]);
+
+export const products = [
+  {
+    id: "kv-001", name: "Meridian FC Home Jersey", team: "Meridian FC", player: "A. Costa #10",
+    season: "2025/26", category: "club", league: "Vale Premier League", price: 89.99, discountPrice: 74.99,
+    rating: 4.8, reviewCount: 214, stock: 69, sku: "MFC-H-2526", featured: true, bestSeller: true, newArrival: true,
+    description: "The Meridian FC 2025/26 home jersey channels the club's coastal heritage with a deep emerald base and a wave-textured yoke. Engineered with breathable AeroKnit fabric for 90 minutes of comfort on and off the pitch.",
+    details: ["100% recycled AeroKnit polyester", "Regular athletic fit", "Heat-sealed crest and sponsor", "Moisture-wicking mesh underarm panels", "Machine washable, cold cycle"],
+    images: gallery("MERIDIAN FC", "0B7A3C", "FAFAF8"), sizes: sizes(),
+  },
+  {
+    id: "kv-002", name: "Meridian FC Away Jersey", team: "Meridian FC", player: "A. Costa #10",
+    season: "2025/26", category: "club", league: "Vale Premier League", price: 89.99, discountPrice: null,
+    rating: 4.6, reviewCount: 132, stock: 54, sku: "MFC-A-2526", featured: false, bestSeller: false, newArrival: true,
+    description: "A stark, minimal away kit finished in chalk white with emerald trim — inspired by the club's founding 1904 shirt.", 
+    details: ["100% recycled AeroKnit polyester", "Regular athletic fit", "Embroidered crest", "UV-protective weave", "Machine washable, cold cycle"],
+    images: gallery("MERIDIAN AWAY", "FAFAF8", "0B7A3C"), sizes: sizes(),
+  },
+  {
+    id: "kv-003", name: "Costa Verdana National Home Jersey", team: "Costa Verdana", player: "National Team",
+    season: "2026", category: "national", league: "International", price: 99.99, discountPrice: 84.99,
+    rating: 4.9, reviewCount: 341, stock: 88, sku: "CV-H-26", featured: true, bestSeller: true, newArrival: true,
+    description: "Costa Verdana's 2026 tournament shirt, worn on the world stage. Bold green and gold pinstripes with a jacquard federation crest.",
+    details: ["ProDry 4-way stretch fabric", "Slim athletic fit", "Jacquard-woven federation crest", "Recycled ocean-plastic trims", "Machine washable, cold cycle"],
+    images: gallery("COSTA VERDANA", "17E06B", "0A0A0B"), sizes: sizes(),
+  },
+  {
+    id: "kv-004", name: "Alvara Kingdom Away Jersey", team: "Alvara", player: "National Team",
+    season: "2026", category: "national", league: "International", price: 94.99, discountPrice: null,
+    rating: 4.5, reviewCount: 98, stock: 41, sku: "ALV-A-26", featured: false, bestSeller: false, newArrival: true,
+    description: "Midnight navy away shirt for the Kingdom of Alvara, with a hand-drawn crest print referencing the royal crest.",
+    details: ["ProDry 4-way stretch fabric", "Slim athletic fit", "Screen-printed crest", "Ventilated back panel", "Machine washable, cold cycle"],
+    images: gallery("ALVARA", "1D1D20", "17E06B"), sizes: sizes(),
+  },
+  {
+    id: "kv-005", name: "Lupo Milano '94 Retro Jersey", team: "Lupo Milano", player: "Retro Collection",
+    season: "1994", category: "retro", league: "Vale Cup Classics", price: 79.99, discountPrice: 64.99,
+    rating: 4.9, reviewCount: 276, stock: 33, sku: "LM-RETRO-94", featured: true, bestSeller: true, newArrival: false,
+    description: "A faithful recreation of Lupo Milano's iconic 1994 continental final shirt, right down to the woven scudetto patch.",
+    details: ["Brushed cotton-poly blend", "Vintage boxy fit", "Woven scudetto patch", "Reproduction sponsor print", "Hand wash recommended"],
+    images: gallery("LUPO MILANO 94", "0A0A0B", "FAFAF8"), sizes: sizes(),
+  },
+  {
+    id: "kv-006", name: "Northbridge United '87 Retro Jersey", team: "Northbridge United", player: "Retro Collection",
+    season: "1987", category: "retro", league: "Vale Premier League", price: 74.99, discountPrice: null,
+    rating: 4.7, reviewCount: 154, stock: 27, sku: "NU-RETRO-87", featured: false, bestSeller: true, newArrival: false,
+    description: "The legendary 1987 title-winning shirt, rebuilt with heritage stripes and an old-school lace collar.",
+    details: ["Brushed cotton-poly blend", "Vintage boxy fit", "Lace-up collar", "Embroidered vintage crest", "Hand wash recommended"],
+    images: gallery("NORTHBRIDGE 87", "FAFAF8", "0A0A0B"), sizes: sizes(),
+  },
+  {
+    id: "kv-007", name: "Rio Estrella Player Issue Home", team: "Rio Estrella", player: "M. Ferreira #7",
+    season: "2025/26", category: "player", league: "Vale Premier League", price: 129.99, discountPrice: 109.99,
+    rating: 4.9, reviewCount: 189, stock: 22, sku: "RE-PI-7-2526", featured: true, bestSeller: true, newArrival: true,
+    description: "Player-issue cut worn by M. Ferreira, with body-mapped ventilation zones and a tighter competition fit.",
+    details: ["Player-fit AeroKnit construction", "Laser-cut ventilation zones", "Heat-sealed name and number", "Anti-odor finish", "Machine washable, cold cycle"],
+    images: gallery("RIO ESTRELLA #7", "17E06B", "0A0A0B"), sizes: sizes(),
+  },
+  {
+    id: "kv-008", name: "Cobalt City FC Player Issue Away", team: "Cobalt City FC", player: "D. Okafor #9",
+    season: "2025/26", category: "player", league: "Vale Premier League", price: 129.99, discountPrice: null,
+    rating: 4.6, reviewCount: 87, stock: 15, sku: "CC-PI-9-2526", featured: false, bestSeller: false, newArrival: true,
+    description: "Sky-cobalt player edition worn by striker D. Okafor, with competition-grade fabric and reinforced seams.",
+    details: ["Player-fit AeroKnit construction", "Reinforced double-stitched seams", "Heat-sealed name and number", "Anti-odor finish", "Machine washable, cold cycle"],
+    images: gallery("COBALT CITY #9", "0B7A3C", "FAFAF8"), sizes: sizes(),
+  },
+  {
+    id: "kv-009", name: "Meridian FC Training Kit", team: "Meridian FC", player: "Training Collection",
+    season: "2025/26", category: "training", league: "Vale Premier League", price: 54.99, discountPrice: 44.99,
+    rating: 4.4, reviewCount: 76, stock: 60, sku: "MFC-TRN-2526", featured: false, bestSeller: false, newArrival: false,
+    description: "Lightweight pre-match training tee built for warm-ups, drills and everyday wear off the pitch.",
+    details: ["Lightweight mesh knit", "Relaxed fit", "Reflective club crest", "Quick-dry technology", "Machine washable"],
+    images: gallery("MFC TRAINING", "1D1D20", "17E06B"), sizes: sizes(),
+  },
+  {
+    id: "kv-010", name: "Costa Verdana Training Kit", team: "Costa Verdana", player: "Training Collection",
+    season: "2026", category: "training", league: "International", price: 59.99, discountPrice: null,
+    rating: 4.3, reviewCount: 52, stock: 48, sku: "CV-TRN-26", featured: false, bestSeller: false, newArrival: true,
+    description: "The national team's official pre-match top with dropped shoulders and stretch side panels.",
+    details: ["Lightweight mesh knit", "Dropped-shoulder fit", "Stretch side panels", "Quick-dry technology", "Machine washable"],
+    images: gallery("CV TRAINING", "FAFAF8", "0B7A3C"), sizes: sizes(),
+  },
+  {
+    id: "kv-011", name: "Meridian FC Kids Home Jersey", team: "Meridian FC", player: "Kids Collection",
+    season: "2025/26", category: "kids", league: "Vale Premier League", price: 54.99, discountPrice: 44.99,
+    rating: 4.8, reviewCount: 61, stock: 40, sku: "MFC-KID-H-2526", featured: false, bestSeller: true, newArrival: true,
+    description: "A soft-touch, true-to-adult-kit replica sized down for young supporters, complete with matching crest.",
+    details: ["Soft-touch recycled polyester", "Relaxed youth fit", "Printed crest and sponsor", "Tagless neck label for comfort", "Machine washable"],
+    images: gallery("MFC KIDS", "17E06B", "0A0A0B"), sizes: sizes(),
+  },
+  {
+    id: "kv-012", name: "Costa Verdana Kids National Jersey", team: "Costa Verdana", player: "Kids Collection",
+    season: "2026", category: "kids", league: "International", price: 59.99, discountPrice: null,
+    rating: 4.7, reviewCount: 39, stock: 30, sku: "CV-KID-26", featured: false, bestSeller: false, newArrival: true,
+    description: "Tournament-ready kids replica shirt in the national colors, with a softer youth-grade fabric.",
+    details: ["Soft-touch recycled polyester", "Relaxed youth fit", "Printed federation crest", "Tagless neck label for comfort", "Machine washable"],
+    images: gallery("CV KIDS", "0B7A3C", "FAFAF8"), sizes: sizes(),
+  },
+  {
+    id: "kv-013", name: "Branco Sur Home Jersey", team: "Branco Sur", player: "Club Collection",
+    season: "2025/26", category: "club", league: "Sur Liga", price: 84.99, discountPrice: 69.99,
+    rating: 4.5, reviewCount: 118, stock: 45, sku: "BS-H-2526", featured: false, bestSeller: false, newArrival: true,
+    description: "Sun-bleached amber and white halves define Branco Sur's home identity for the new campaign.",
+    details: ["100% recycled AeroKnit polyester", "Regular athletic fit", "Embroidered crest", "Moisture-wicking mesh underarm panels", "Machine washable, cold cycle"],
+    images: gallery("BRANCO SUR", "1D1D20", "17E06B"), sizes: sizes(),
+  },
+  {
+    id: "kv-014", name: "Atlas Vale FC Away Jersey", team: "Atlas Vale FC", player: "Club Collection",
+    season: "2025/26", category: "club", league: "Vale Premier League", price: 84.99, discountPrice: null,
+    rating: 4.4, reviewCount: 71, stock: 38, sku: "AV-A-2526", featured: false, bestSeller: false, newArrival: false,
+    description: "A charcoal-on-charcoal away kit with tonal mountain-range graphic referencing the club's Atlas roots.",
+    details: ["100% recycled AeroKnit polyester", "Regular athletic fit", "Tonal jacquard pattern", "Ventilated back panel", "Machine washable, cold cycle"],
+    images: gallery("ATLAS VALE", "0A0A0B", "17E06B"), sizes: sizes(),
+  },
+  {
+    id: "kv-015", name: "Lupo Milano Home Jersey", team: "Lupo Milano", player: "Club Collection",
+    season: "2025/26", category: "club", league: "Vale Cup Classics", price: 89.99, discountPrice: 74.99,
+    rating: 4.7, reviewCount: 203, stock: 52, sku: "LM-H-2526", featured: true, bestSeller: true, newArrival: false,
+    description: "Classic red and black stripes return for the new season, finished with a modern crew collar.",
+    details: ["100% recycled AeroKnit polyester", "Regular athletic fit", "Woven scudetto-style patch", "Moisture-wicking mesh underarm panels", "Machine washable, cold cycle"],
+    images: gallery("LUPO MILANO", "0A0A0B", "FAFAF8"), sizes: sizes(),
+  },
+  {
+    id: "kv-016", name: "Northbridge United Home Jersey", team: "Northbridge United", player: "Club Collection",
+    season: "2025/26", category: "club", league: "Vale Premier League", price: 84.99, discountPrice: null,
+    rating: 4.6, reviewCount: 165, stock: 58, sku: "NU-H-2526", featured: false, bestSeller: true, newArrival: true,
+    description: "Heritage broad stripes in cobalt and white, updated with a laser-cut ventilation yoke.",
+    details: ["100% recycled AeroKnit polyester", "Regular athletic fit", "Embroidered crest", "Laser-cut ventilation yoke", "Machine washable, cold cycle"],
+    images: gallery("NORTHBRIDGE", "0B7A3C", "FAFAF8"), sizes: sizes(),
+  },
+  {
+    id: "kv-017", name: "Rio Estrella Retro '02 Jersey", team: "Rio Estrella", player: "Retro Collection",
+    season: "2002", category: "retro", league: "Vale Cup Classics", price: 79.99, discountPrice: 64.99,
+    rating: 4.8, reviewCount: 142, stock: 24, sku: "RE-RETRO-02", featured: false, bestSeller: false, newArrival: false,
+    description: "The shirt worn during Rio Estrella's famous 2002 continental run, rebuilt stitch-for-stitch.",
+    details: ["Brushed cotton-poly blend", "Vintage boxy fit", "Embroidered vintage crest", "Reproduction sponsor print", "Hand wash recommended"],
+    images: gallery("RIO ESTRELLA 02", "17E06B", "0A0A0B"), sizes: sizes(),
+  },
+  {
+    id: "kv-018", name: "Alvara National Home Jersey", team: "Alvara", player: "National Team",
+    season: "2026", category: "national", league: "International", price: 99.99, discountPrice: 84.99,
+    rating: 4.7, reviewCount: 176, stock: 63, sku: "ALV-H-26", featured: true, bestSeller: false, newArrival: true,
+    description: "Royal navy and gold home shirt for the Kingdom of Alvara's 2026 campaign, with a raised crest emblem.",
+    details: ["ProDry 4-way stretch fabric", "Slim athletic fit", "Raised silicone crest emblem", "Recycled ocean-plastic trims", "Machine washable, cold cycle"],
+    images: gallery("ALVARA HOME", "1D1D20", "17E06B"), sizes: sizes(),
+  },
+  {
+    id: "kv-019", name: "Cobalt City FC Training Kit", team: "Cobalt City FC", player: "Training Collection",
+    season: "2025/26", category: "training", league: "Vale Premier League", price: 54.99, discountPrice: null,
+    rating: 4.2, reviewCount: 34, stock: 55, sku: "CC-TRN-2526", featured: false, bestSeller: false, newArrival: false,
+    description: "Everyday training tee in cobalt with a tonal side stripe and stretch-mesh back yoke.",
+    details: ["Lightweight mesh knit", "Relaxed fit", "Tonal side stripe", "Quick-dry technology", "Machine washable"],
+    images: gallery("CC TRAINING", "0B7A3C", "FAFAF8"), sizes: sizes(),
+  },
+  {
+    id: "kv-020", name: "Branco Sur Kids Home Jersey", team: "Branco Sur", player: "Kids Collection",
+    season: "2025/26", category: "kids", league: "Sur Liga", price: 49.99, discountPrice: 39.99,
+    rating: 4.6, reviewCount: 28, stock: 35, sku: "BS-KID-2526", featured: false, bestSeller: false, newArrival: true,
+    description: "A pint-sized version of Branco Sur's amber home kit, built for the playground and the stands alike.",
+    details: ["Soft-touch recycled polyester", "Relaxed youth fit", "Printed crest and sponsor", "Tagless neck label for comfort", "Machine washable"],
+    images: gallery("BRANCO KIDS", "1D1D20", "17E06B"), sizes: sizes(),
+  },
+];
+
+export const getProductById = (id) => products.find((p) => p.id === id);
+export const getRelatedProducts = (product, count = 4) =>
+  products.filter((p) => p.id !== product.id && (p.team === product.team || p.category === product.category)).slice(0, count);
